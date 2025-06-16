@@ -28,6 +28,7 @@ process VCF2PSEUDOGENOME {
     script: // This script is bundled with the pipeline, in nf-core/bactmap/bin/
     def software = getSoftwareName(task.process)
     """
-    python3 $projectDir/bin/vcf2pseudogenome.py  -r ${reference} -b ${vcf} -o ${meta.id}.fas
+    echo "Forcing failure for cache test" >&2
+    exit 1
     """
 }
